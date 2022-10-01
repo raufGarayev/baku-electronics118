@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap'
 import './App.css';
+import {React, useState} from 'react'
 
+// melumat bazasi
+import products from './products.json'
+// komponentler
+import Navbar from './components/Navbar';
+import Product from './components/Product';
 function App() {
+
+  // STATE ANLAYISHINI
+  const [money,setMoney] = useState(15000)
+  const [basket, setBasket] = useState([])
+  const [total,setTotal] = useState(0)
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+
+ <Navbar />
+    <div className='mehsullar'>
+    {
+      products.map(p =>(
+        <Product product={p} basket={basket} setBasket={setBasket} total={total} />
+      ))
+    }
+
+</div>
+
+ </>
   );
 }
 

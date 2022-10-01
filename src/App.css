@@ -1,16 +1,194 @@
-.App {
+
+.s-input {
+  position: relative;
+  max-width: 580px;
+  width: 540px;
+  /* height: 300px; */
+  border-radius: 25px;
+  border: 1px solid #dedede;
+}
+
+.s-input input {
+  width: 100% !important;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  padding: 2px 20px;
+
+}
+
+
+
+.s-icon {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+
+/* NAVBAR OVERLAY */
+
+.overlay {
+  transform: scale(0);
+  background-color: rgba(0,0,0,.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 4;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 1s ease-in-out;
+
+}
+
+.overlay input {
+  width: 70%;
+  padding: 7px 10px;
+  border-radius: 25px;
+  border-color:transparent;
+  background-color: transparent;
+  outline: none;
   text-align: center;
+  color: orange;
+  font-size: 34px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.overlay .cross-icon {
+  position: absolute;
+  top: 25px;
+  right: 15px;
+  font-size:34px;
+  color: #fff;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.active {
+  transform: scale(1);
+}
+
+.s-icon, .cross-icon {
+  cursor: pointer;
+}
+
+
+.carousel {
+  
+  width: 70%;
+  margin: 0 auto;
+  height: 600px;
+  margin-top: 20px;
+}
+
+
+.carousel-inner {
+  background-color: #dedede;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-inner img {
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* .carousel-item {
+} */
+
+.fromTop{
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  background: lime;
+}
+
+.fromBottom{
+  position: absolute;
+  top: 60%;
+  left: 10%;
+}
+
+.carousel-control-next-icon {
+  background-color: black;
+  color: red;
+}
+
+
+/* SWIPER */
+
+.swiper-wrapper {
+  margin-top: 30px;
+  height: 420px !important;
+}
+
+.swiper-slide img {
+  width: 100%;
+}
+
+
+.mehsullar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* PRODUCT section */
+
+.product {
+  width: 20%;
+  min-width: 200px;
+  box-shadow: 5px 10px 5px rgba(0,0,0,.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  margin: 5px;
+
+}
+
+.product img {
+  width: 200px;
+}
+
+.refund-btn , .add-basket-btn {
+  background-color: transparent;
+  border: 1px solid #dedede;
+  padding: 10px 20px;
+}
+
+
+/* CSS  */
+
+.basket-container {
+  text-align: center;
+  box-shadow: 5px 8px 9px rgba(0,0,0,.2);
+  width: 500px;
+  padding: 30px;
+  margin: 0 auto;
+
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+.magaza {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
+  font-size: 64px;
 }
 
 .App-header {
