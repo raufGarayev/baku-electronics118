@@ -1,12 +1,21 @@
 import React , {useRef} from 'react'
 import {AiOutlineSearch} from 'react-icons/ai'
+import {MdCancel} from 'react-icons/md'
 
 const Navbar = () => {
 
-
+    const closeBtn = useRef()
     const searchIconRef = useRef()
     // acilacaq pencere overlayRef
     const overlayRef = useRef()
+
+    const closeOverlay = (e) => {
+      const clickedEl = e.target
+      if(clickedEl.classList.contains('cross-icon'))
+        clickedEl.parentElement.classList.remove('active')
+
+      console.log(clickedEl)
+    }
 
 
     const openOverlay = (e) => {
@@ -23,13 +32,14 @@ const Navbar = () => {
   return (
     <>
     <div className="overlay" ref={overlayRef} >
+        <MdCancel className='cross-icon' onClick={closeOverlay} ref={closeBtn} />
         <input className='overlay-search-input' type="search" placeholder='Search in IT Brains Search' />
     </div>
-    <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/"><img src="	https://www.bakuelectronics.az/assets/img/logo.svg" alt="" /></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+    <nav className="navbar navbar-expand-lg">
+    <div className="container-fluid">
+      <a className="navbar-brand" href="/"><img src="	https://www.bakuelectronics.az/assets/img/logo.svg" alt="" /></a>
+      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
       </button>
       <div className="s-input">
         <input type="text" />
@@ -37,12 +47,12 @@ const Navbar = () => {
        
 
       </div>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav mx-auto">
-          <a class="nav-link active text-danger" aria-current="page" href="/kampaniyalar">Kampaniyalar</a>
-          <a class="nav-link" href="/magazalar">Mağazalar</a>
-          <a class="nav-link" href="#"></a>
-          <a class="nav-link" href="#">143 </a>
+      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div className="navbar-nav mx-auto">
+          <a className="nav-link active text-danger" aria-current="page" href="/kampaniyalar">Kampaniyalar</a>
+          <a className="nav-link" href="/magazalar">Mağazalar</a>
+          <a className="nav-link" href="#"></a>
+          <a className="nav-link" href="#">143 </a>
         </div>
       </div>
     </div>
