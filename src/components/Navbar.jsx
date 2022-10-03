@@ -1,8 +1,9 @@
 import React , {useRef} from 'react'
 import {AiOutlineSearch} from 'react-icons/ai'
 import {MdCancel} from 'react-icons/md'
+import Balance from './Balance'
 
-const Navbar = () => {
+const Navbar = ({total, balance}) => {
 
     const closeBtn = useRef()
     const searchIconRef = useRef()
@@ -51,7 +52,7 @@ const Navbar = () => {
         <div className="navbar-nav mx-auto">
           <a className="nav-link active text-danger" aria-current="page" href="/kampaniyalar">Kampaniyalar</a>
           <a className="nav-link" href="/magazalar">Mağazalar</a>
-          <a className="nav-link" href="#"></a>
+          <a className="nav-link" href="#"><Balance total={total} balance={balance}/></a>
           <a className="nav-link" href="#">143 </a>
         </div>
       </div>
